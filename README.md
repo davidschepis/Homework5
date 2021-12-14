@@ -8,6 +8,7 @@ This webpage allows a user to save and schedule events with corresponding event 
 along with jquery and moment.js.
 
 Links:
+
 https://github.com/davidschepis/Homework5
 
 https://davidschepis.github.io/Homework5/
