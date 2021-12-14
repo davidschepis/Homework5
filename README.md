@@ -5,7 +5,7 @@
 David Schepis
 
 This webpage allows a user to save and schedule events with corresponding event details. It utilizes bootstrap, google font, font awesome,
-along with jquery and moment.js.
+along with jquery and moment.js. The events are saved in local storage and persist after a refresh. 
 
 Links:
 
