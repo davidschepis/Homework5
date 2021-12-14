@@ -1,6 +1,5 @@
 //Global Variables
-var timeString = ["12AM", "1AM", "2AM", "3AM", "4AM", "5AM", "6AM", "7AM", "8AM", "9AM", "10AM", "11AM",
-    "12PM", "1PM", "2PM", "3PM", "4PM", "5PM", "6PM", "7PM", "8PM", "9PM", "10PM", "11PM"];
+var timeString = ["9AM", "10AM", "11AM", "12PM", "1PM", "2PM", "3PM", "4PM", "5PM"];
 var mainContainer = $('.container');
 
 DisplayDate();
@@ -13,7 +12,7 @@ function DisplayDate() {
 
 //This function displays the timeblocks section
 function DisplayTimeBlocks() {
-    for (var i = 0; i < 24; i++) {
+    for (var i = 0; i < 9; i++) {
         var rowDiv = $('<div>');
         var colDiv1 = $('<div>');
         var colDiv2 = $('<div>');
@@ -32,6 +31,8 @@ function DisplayTimeBlocks() {
         rowDiv.append(colDiv3);
         mainContainer.append(rowDiv);
     }
+    var hr = $('<hr>');
+    mainContainer.append(hr);
 }
 
 //This function retrives the details for a timeblock from local storage
