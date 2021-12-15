@@ -17,15 +17,33 @@ function DisplayTimeBlocks() {
         var colDiv1 = $('<div>');
         var colDiv2 = $('<div>');
         var colDiv3 = $('<div>');
+        var textArea = $('<textarea>');
+        var saveButton = $('<button>');
+        var img = $('<img>');
+
         rowDiv.addClass("row");
-        colDiv1.addClass("col firstCol");
-        colDiv2.addClass("col secondCol");
-        colDiv3.addClass("col thirdCol");
+        colDiv1.addClass("col-2");
+        colDiv2.addClass("col-8");
+        colDiv3.addClass("col-2");
+        colDiv1.addClass("firstCol")
+        colDiv2.addClass("secondCol")
+        colDiv3.addClass("thirdCol")
+        textArea.addClass("form-control");
+        saveButton.addClass("btn");
+        saveButton.addClass("btn-primary");
+        saveButton.addClass("btn-block");
+        saveButton.addClass("rounded-right");
+        
         colDiv1.text(timeString[(i)]);
-        colDiv2.text(GetDetailsFromLocalStorage(timeString[(i)]));
-        colDiv3.css("background", "url('./assets/images/saveIcon.png')");
-        colDiv3.css("background-size", "30px 30px");
-        colDiv3.css("background-repeat", "no-repeat");
+        textArea.attr("id", "details");
+        textArea.text(GetDetailsFromLocalStorage());
+        saveButton.attr("id", "saveButton" + i);
+        saveButton.css("height", "100%");
+        img.attr("src", "./assets/images/save.svg");
+        
+        colDiv2.append(textArea);
+        saveButton.append(img);
+        colDiv3.append(saveButton);
         rowDiv.append(colDiv1);
         rowDiv.append(colDiv2);
         rowDiv.append(colDiv3);
@@ -34,6 +52,8 @@ function DisplayTimeBlocks() {
     var hr = $('<hr>');
     mainContainer.append(hr);
 }
+
+
 
 //This function retrives the details for a timeblock from local storage
 function GetDetailsFromLocalStorage(index) {
