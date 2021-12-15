@@ -25,26 +25,31 @@ function DisplayTimeBlocks() {
 
         rowDiv.addClass("row");
         rowDiv.addClass("time-block");
+
         colDiv1.addClass("col-1");
         colDiv1.addClass("hour");
-        colDiv2.addClass("col-9");
-        colDiv3.addClass("col-1");
         colDiv1.addClass("firstCol")
+        colDiv1.addClass("m-0");
+        colDiv1.addClass("p-0");
+
+        colDiv2.addClass("col-9");
         colDiv2.addClass("secondCol")
+        colDiv2.addClass("m-0");
+        colDiv2.addClass("p-0");
+
+        colDiv3.addClass("m-0");
+        colDiv3.addClass("p-0");
+        colDiv3.addClass("col-1");
         colDiv3.addClass("thirdCol")
+
         textArea.addClass("form-control");
         textArea.addClass("h-100");
         textArea.addClass("description");
+
         saveButton.addClass("btn");
         saveButton.addClass("btn-primary");
         saveButton.addClass("btn-block");
         saveButton.addClass("saveBtn");
-        colDiv1.addClass("m-0");
-        colDiv1.addClass("p-0");
-        colDiv2.addClass("m-0");
-        colDiv2.addClass("p-0");
-        colDiv3.addClass("m-0");
-        colDiv3.addClass("p-0");
         
         span.text(timeString[(i)]);
         span.css("position", "relative");
@@ -98,7 +103,7 @@ function GetDetailsFromLocalStorage(index) {
     }
 }
 
+//Saves the details into local storage based on the given index
 function HandleSaveButton(index) {
     localStorage.setItem("details" + index, $("#details" + index).val());
-    // DisplayTimeBlocks();
 }
