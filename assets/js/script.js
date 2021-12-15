@@ -39,6 +39,7 @@ function DisplayTimeBlocks() {
         textArea.text(GetDetailsFromLocalStorage());
         saveButton.attr("id", "saveButton" + i);
         saveButton.css("height", "100%");
+        saveButton.attr("onclick", "HandleSaveButton(" + i + ")");
         img.attr("src", "./assets/images/save.svg");
         
         colDiv2.append(textArea);
@@ -58,4 +59,8 @@ function DisplayTimeBlocks() {
 //This function retrives the details for a timeblock from local storage
 function GetDetailsFromLocalStorage(index) {
     return "chabs";
+}
+
+function HandleSaveButton(index) {
+    console.log(index);
 }
