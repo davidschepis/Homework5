@@ -1,9 +1,10 @@
 //Global Variables
-var timeString = ["9AM", "10AM", "11AM", "12PM", "1PM", "2PM", "3PM", "4PM", "5PM"];
-var mainContainer = $('.container');
+var timeString = ["9AM", "10AM", "11AM", "12PM", "1PM", "2PM", "3PM", "4PM", "5PM"];//will make displaying these easier
+var timeArray = [9, 10, 11, 12, 13, 14, 15, 16, 17];//to work with moment.js and figure out what color the textarea should be
+var mainContainer = $('.container');//main container on the webpage
 
-DisplayDate();
-DisplayTimeBlocks();
+DisplayDate();//display date on load
+DisplayTimeBlocks();//display timeblocks on load
 
 //This function uses moment.js to display the date at the top of the page
 function DisplayDate() {
@@ -28,6 +29,8 @@ function DisplayTimeBlocks() {
         colDiv1.addClass("firstCol")
         colDiv2.addClass("secondCol")
         colDiv3.addClass("thirdCol")
+        colDiv1.addClass("border-top");
+        colDiv1.addClass("border-right");
         textArea.addClass("form-control");
         saveButton.addClass("btn");
         saveButton.addClass("btn-primary");
@@ -35,17 +38,18 @@ function DisplayTimeBlocks() {
         saveButton.addClass("rounded-right");
         
         colDiv1.text(timeString[(i)]);
+        colDiv1.css("text-align", "right");
         textArea.attr("id", "details" + i);
         textArea.text(GetDetailsFromLocalStorage(i));
         // saveButton.attr("id", "saveButton" + i);
         saveButton.css("height", "100%");
         saveButton.attr("onclick", "HandleSaveButton(" + i + ")");
         img.attr("src", "./assets/images/save.svg");
-        if(CheckPresent()) {
-            textArea.css("background-color", "red");
+        if(CheckPresent(i)) {
+            textArea.css("background-color", "LightRed");
         }
-        else if (CheckFuture()) {
-            textArea.css("background-color", "green");
+        else if (CheckFuture(i)) {
+            textArea.css("background-color", "LightGreen");
         }
         else {
             textArea.css("background-color", "LightGray");
@@ -62,12 +66,14 @@ function DisplayTimeBlocks() {
     mainContainer.append(hr);
 }
 
-function CheckPresent() {
-    return false;
+//This function returns true if the current hour matches the timeslot, false otherwise
+function CheckPresent(index) {
+    return moment().hour() === timeArray[index] ? true : false;
 }
 
-function CheckFuture() {
-    return false;
+//This function returns true if the current hour is greater than the timeslot, false otherwise
+function CheckFuture(index) {
+    return moment().hour() > timeArray[index] ? true : false;
 }
 
 //This function retrives the details for a timeblock from local storage
