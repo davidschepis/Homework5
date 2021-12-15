@@ -13,4 +13,10 @@ https://github.com/davidschepis/Homework5
 
 https://davidschepis.github.io/Homework5/
 
+Screenshot 1 (after 5PM so everything shows green)
+
 ![Screenshot](assets/images/screenshot.png)
+
+Screenshot2 (at 11AM to show color changes)
+
+![Screenshot](assets/images/screenshot2.png)
