@@ -24,19 +24,21 @@ function DisplayTimeBlocks() {
         var img = $('<img>');
 
         rowDiv.addClass("row");
+        rowDiv.addClass("time-block");
         colDiv1.addClass("col-1");
+        colDiv1.addClass("hour");
         colDiv2.addClass("col-9");
         colDiv3.addClass("col-1");
         colDiv1.addClass("firstCol")
         colDiv2.addClass("secondCol")
         colDiv3.addClass("thirdCol")
-        colDiv1.addClass("border-top");
-        colDiv1.addClass("border-right");
         textArea.addClass("form-control");
         textArea.addClass("h-100");
+        textArea.addClass("description");
         saveButton.addClass("btn");
         saveButton.addClass("btn-primary");
         saveButton.addClass("btn-block");
+        saveButton.addClass("saveBtn");
         colDiv1.addClass("m-0");
         colDiv1.addClass("p-0");
         colDiv2.addClass("m-0");
@@ -53,16 +55,15 @@ function DisplayTimeBlocks() {
         textArea.text(GetDetailsFromLocalStorage(i));
         saveButton.css("height", "100%");
         saveButton.attr("onclick", "HandleSaveButton(" + i + ")");
-        saveButton.css("border-radius", "0% 25% 25% 0%");
         img.attr("src", "./assets/images/save.svg");
         if(CheckPresent(i)) {
-            textArea.css("background-color", "LightRed");
+            textArea.addClass("present");
         }
         else if (CheckFuture(i)) {
-            textArea.css("background-color", "LightGreen");
+            textArea.addClass("future");
         }
         else {
-            textArea.css("background-color", "LightGray");
+            textArea.addClass("past");
         }
         colDiv1.append(span);
         colDiv2.append(textArea);
