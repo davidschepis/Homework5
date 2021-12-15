@@ -41,7 +41,15 @@ function DisplayTimeBlocks() {
         saveButton.css("height", "100%");
         saveButton.attr("onclick", "HandleSaveButton(" + i + ")");
         img.attr("src", "./assets/images/save.svg");
-        
+        if(CheckPresent()) {
+            textArea.css("background-color", "red");
+        }
+        else if (CheckFuture()) {
+            textArea.css("background-color", "green");
+        }
+        else {
+            textArea.css("background-color", "LightGray");
+        }
         colDiv2.append(textArea);
         saveButton.append(img);
         colDiv3.append(saveButton);
@@ -54,7 +62,13 @@ function DisplayTimeBlocks() {
     mainContainer.append(hr);
 }
 
+function CheckPresent() {
+    return false;
+}
 
+function CheckFuture() {
+    return false;
+}
 
 //This function retrives the details for a timeblock from local storage
 function GetDetailsFromLocalStorage(index) {
