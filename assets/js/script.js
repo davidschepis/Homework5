@@ -20,24 +20,36 @@ function DisplayTimeBlocks() {
         var colDiv3 = $('<div>');
         var textArea = $('<textarea>');
         var saveButton = $('<button>');
+        var span = $('<span>');
         var img = $('<img>');
 
         rowDiv.addClass("row");
-        colDiv1.addClass("col-2");
-        colDiv2.addClass("col-8");
-        colDiv3.addClass("col-2");
+        colDiv1.addClass("col-1");
+        colDiv2.addClass("col-9");
+        colDiv3.addClass("col-1");
         colDiv1.addClass("firstCol")
         colDiv2.addClass("secondCol")
         colDiv3.addClass("thirdCol")
         colDiv1.addClass("border-top");
         colDiv1.addClass("border-right");
         textArea.addClass("form-control");
+        textArea.addClass("h-100");
         saveButton.addClass("btn");
         saveButton.addClass("btn-primary");
         saveButton.addClass("btn-block");
         saveButton.addClass("rounded-right");
+        colDiv1.addClass("m-0");
+        colDiv1.addClass("p-0");
+        colDiv2.addClass("m-0");
+        colDiv2.addClass("p-0");
+        colDiv3.addClass("m-0");
+        colDiv3.addClass("p-0");
+        saveButton.addClass("rounded-right");
         
-        colDiv1.text(timeString[(i)]);
+        span.text(timeString[(i)]);
+        span.css("position", "relative");
+        span.css("top", "20px");
+        span.css("right", "20px");
         colDiv1.css("text-align", "right");
         textArea.attr("id", "details" + i);
         textArea.text(GetDetailsFromLocalStorage(i));
@@ -54,6 +66,7 @@ function DisplayTimeBlocks() {
         else {
             textArea.css("background-color", "LightGray");
         }
+        colDiv1.append(span);
         colDiv2.append(textArea);
         saveButton.append(img);
         colDiv3.append(saveButton);
