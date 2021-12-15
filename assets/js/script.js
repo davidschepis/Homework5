@@ -37,14 +37,12 @@ function DisplayTimeBlocks() {
         saveButton.addClass("btn");
         saveButton.addClass("btn-primary");
         saveButton.addClass("btn-block");
-        saveButton.addClass("rounded-right");
         colDiv1.addClass("m-0");
         colDiv1.addClass("p-0");
         colDiv2.addClass("m-0");
         colDiv2.addClass("p-0");
         colDiv3.addClass("m-0");
         colDiv3.addClass("p-0");
-        saveButton.addClass("rounded-right");
         
         span.text(timeString[(i)]);
         span.css("position", "relative");
@@ -53,9 +51,9 @@ function DisplayTimeBlocks() {
         colDiv1.css("text-align", "right");
         textArea.attr("id", "details" + i);
         textArea.text(GetDetailsFromLocalStorage(i));
-        // saveButton.attr("id", "saveButton" + i);
         saveButton.css("height", "100%");
         saveButton.attr("onclick", "HandleSaveButton(" + i + ")");
+        saveButton.css("border-radius", "0% 25% 25% 0%");
         img.attr("src", "./assets/images/save.svg");
         if(CheckPresent(i)) {
             textArea.css("background-color", "LightRed");
