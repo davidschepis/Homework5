@@ -90,7 +90,7 @@ function CheckPresent(index) {
 
 //This function returns true if the current hour is greater than the timeslot, false otherwise
 function CheckFuture(index) {
-    return moment().hour() > timeArray[index] ? true : false;
+    return moment().hour() < timeArray[index] ? true : false;
 }
 
 //This function retrives the details for a timeblock from local storage
