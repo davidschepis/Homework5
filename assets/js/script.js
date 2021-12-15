@@ -35,9 +35,9 @@ function DisplayTimeBlocks() {
         saveButton.addClass("rounded-right");
         
         colDiv1.text(timeString[(i)]);
-        textArea.attr("id", "details");
-        textArea.text(GetDetailsFromLocalStorage());
-        saveButton.attr("id", "saveButton" + i);
+        textArea.attr("id", "details" + i);
+        textArea.text(GetDetailsFromLocalStorage(i));
+        // saveButton.attr("id", "saveButton" + i);
         saveButton.css("height", "100%");
         saveButton.attr("onclick", "HandleSaveButton(" + i + ")");
         img.attr("src", "./assets/images/save.svg");
@@ -58,9 +58,15 @@ function DisplayTimeBlocks() {
 
 //This function retrives the details for a timeblock from local storage
 function GetDetailsFromLocalStorage(index) {
-    return "chabs";
+    if (localStorage.getItem("details" + index) === null) {
+        return "";
+    }
+    else {
+        return localStorage.getItem("details" + index);
+    }
 }
 
 function HandleSaveButton(index) {
-    console.log(index);
+    localStorage.setItem("details" + index, $("#details" + index).val());
+    // DisplayTimeBlocks();
 }
