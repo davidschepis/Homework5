@@ -28,19 +28,19 @@ function DisplayTimeBlocks() {
 
         colDiv1.addClass("col-1");
         colDiv1.addClass("hour");
-        colDiv1.addClass("firstCol")
+        colDiv1.addClass("firstCol");
         colDiv1.addClass("m-0");
         colDiv1.addClass("p-0");
 
         colDiv2.addClass("col-9");
-        colDiv2.addClass("secondCol")
+        colDiv2.addClass("secondCol");
         colDiv2.addClass("m-0");
         colDiv2.addClass("p-0");
 
         colDiv3.addClass("m-0");
         colDiv3.addClass("p-0");
         colDiv3.addClass("col-1");
-        colDiv3.addClass("thirdCol")
+        colDiv3.addClass("thirdCol");
 
         textArea.addClass("form-control");
         textArea.addClass("h-100");
