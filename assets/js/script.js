@@ -90,6 +90,7 @@ function CheckPresent(index) {
 
 //This function returns true if the current hour is greater than the timeslot, false otherwise
 function CheckPast(index) {
+    console.log(moment().hour());
     return moment().hour() > timeArray[index] ? true : false;
 }
 
