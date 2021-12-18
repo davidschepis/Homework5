@@ -61,7 +61,7 @@ function DisplayTimeBlocks() {
         saveButton.css("height", "100%");
         saveButton.attr("onclick", "HandleSaveButton(" + i + ")");
         img.attr("src", "./assets/images/save.svg");
-        console.log(moment().hour());
+        alert(moment().hour());
         if(CheckPresent(i)) {
             textArea.addClass("present");
         }
