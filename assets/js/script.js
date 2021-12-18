@@ -61,6 +61,7 @@ function DisplayTimeBlocks() {
         saveButton.css("height", "100%");
         saveButton.attr("onclick", "HandleSaveButton(" + i + ")");
         img.attr("src", "./assets/images/save.svg");
+        console.log(moment().hour());
         if(CheckPresent(i)) {
             textArea.addClass("present");
         }
@@ -90,7 +91,6 @@ function CheckPresent(index) {
 
 //This function returns true if the current hour is greater than the timeslot, false otherwise
 function CheckPast(index) {
-    console.log(moment().hour());
     return moment().hour() > timeArray[index] ? true : false;
 }
 
