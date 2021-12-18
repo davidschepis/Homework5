@@ -64,11 +64,11 @@ function DisplayTimeBlocks() {
         if(CheckPresent(i)) {
             textArea.addClass("present");
         }
-        else if (CheckFuture(i)) {
-            textArea.addClass("future");
+        else if (CheckPast(i)) {
+            textArea.addClass("past");
         }
         else {
-            textArea.addClass("past");
+            textArea.addClass("future");
         }
         colDiv1.append(span);
         colDiv2.append(textArea);
@@ -83,14 +83,14 @@ function DisplayTimeBlocks() {
     mainContainer.append(hr);
 }
 
-//This function returns true if the current hour matches the timeslot, false otherwise
+//This function returns true if the current hour matches the timeslot, false otherwise moment().hour()
 function CheckPresent(index) {
     return moment().hour() === timeArray[index] ? true : false;
 }
 
 //This function returns true if the current hour is greater than the timeslot, false otherwise
-function CheckFuture(index) {
-    return moment().hour() < timeArray[index] ? true : false;
+function CheckPast(index) {
+    return moment().hour() > timeArray[index] && moment().hour() < 17 ? true : false;
 }
 
 //This function retrives the details for a timeblock from local storage
