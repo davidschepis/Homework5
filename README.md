@@ -9,9 +9,9 @@ along with jquery and moment.js. The events are saved in local storage and persi
 
 Links:
 
-https://github.com/davidschepis/Homework5
+https://github.com/davidschepis/Work_Day_Scheduler
 
-https://davidschepis.github.io/Homework5/
+https://davidschepis.github.io/Work_Day_Scheduler/
 
 Screenshot 1 (after 5PM so everything shows green)
 
